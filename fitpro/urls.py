@@ -16,7 +16,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from fit_app.views import main_page
 
 urlpatterns = [
+    path('home/', main_page, name='main'),
     path('admin/', admin.site.urls),
 ]
