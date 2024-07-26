@@ -1,6 +1,8 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.shortcuts import render
+from django.views import generic
+from .models import Member
 
-# Create your views here.
-def member_page(request):
-    return HttpResponse("Hello member")
+class Profile(generic.ListView):
+    queryset = Member.objects.all()
+    template_name = "profile.html"

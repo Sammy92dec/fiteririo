@@ -1,6 +1,6 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.views import generic
+from .models import Session
 
-# Create your views here.
-def main_page(request):
-    return HttpResponse("Hello, Blog!")
+class PostList(generic.ListView):
+    model = Session
